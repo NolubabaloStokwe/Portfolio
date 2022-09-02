@@ -21,7 +21,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open index.html",
+            "name": "Open about.html",
+
             "file": "c:\\Users\\Babes Stokwe\\Desktop\\Portfolio\\index.html"
         }
     ]

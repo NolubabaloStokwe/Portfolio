@@ -6,94 +6,486 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
+      /* Style the navigation bar */
+.navbar {
   width: 100%;
-}
-
-.button:hover {
   background-color: #555;
+  overflow: auto;
 }
 
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #04AA6D;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
     display: block;
+
   }
-}  
+}
+body {
+  background-image: url('R.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-family: segoe-ui_normal,Segoe UI,Segoe,Segoe WP,Helvetica Neue,Helvetica,sans-serif;
+	display: grid;
+	grid-template-areas: 
+    "header header header"
+    "nav section section"
+    "footer footer footer";
+	grid-template-rows: 80px 1fr 50px;
+	grid-template-columns: 39% 1fr 20%;
+	grid-gap: 5px;
+  height: 100vh;
+  margin: 10px;
+  }
+
+
+  header {
+	background:white;
+	grid-area: header;
+}
+
+nav {
+	background: #C9BFBF;
+	grid-area: nav; 
+}
+
+section {
+	background: white;
+	grid-area: section;    
+}
+
+aside {
+	background:white;
+	grid-area: aside; 
+}
+
+footer {
+	background: white;
+	grid-area: footer;
+}
+
+header, nav, section, aside, footer {
+	padding: 5px;
+}
+body
+{
+    background: #40b9ae; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+    background:         linear-gradient(to left, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.shadow
+{
+    text-align: center;
+
+    color: #fff;
+    text-shadow: 1px 1px rgba(0,0,0,.35);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 100;
+}
+
+p,
+span
+{
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.left
+{
+    float: left;
+}
+
+.resume
+{
+    width: 900px;
+    height: 960px;
+    margin: 50px auto 25px;
+    padding: 20px 0 30px;
+
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+}
+
+.plate
+{
+    position: relative;
+
+    float: left;
+
+    width: 400px;
+    height: 250px;
+    margin: 0 15px;
+    padding: 10px;
+}
+
+.quote
+{
+    float: left;
+
+    width: 4px;
+    height: 21px;
+
+    background-color: #40b9ae;
+}
+
+.outside
+{
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    background: #40b9ae; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+    background:         linear-gradient(to top, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    -webkit-clip-path: polygon(50% 5%, 90% 30%, 90% 70%, 50% 95%, 10% 70%, 10% 30%);
+}
+
+.selfie
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    width: 135px;
+    height: 135px;
+
+    background: url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/c152.0.320.320/p320x320/14046114_675186845980655_4981114054095761764_n.jpg?oh=c2b9cfc65123aefc33499ab8bfb0cad7&oe=58731CA1);
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+         -o-background-size: contain;
+            background-size: contain;
+
+    -webkit-clip-path: polygon(50% 5%, 90% 30%, 90% 70%, 50% 95%, 10% 70%, 10% 30%);
+}
+
+.name
+{
+    float: left;
+
+    margin: 46px 0 0;
+}
+
+.progressbar
+{
+    width: auto;
+    height: 100%;
+    margin: 0 25px;
+    padding: 0;
+
+    border: 1px solid #3ad88f;
+}
+
+.progressbar .percent
+{
+    height: 15px;
+
+    background: #40b9ae; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+    background:         linear-gradient(to left, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.per85
+{
+    width: 85%;
+}
+
+.per80
+{
+    width: 80%;
+}
+.per70
+{
+    width: 70%;
+}
+.per60
+{
+    width: 60%;
+}
+
+.timeline
+{
+    float: left;
+
+    width: 15px;
+    margin: 0 10px 0 25px;
+    padding: 0;
+}
+
+.spot
+{
+    width: 12px;
+    height: 12px;
+
+    border-radius: 100%;
+    background-color: #40b9ae;
+}
+.line
+{
+    width: 2px;
+    height: 120px;
+    margin: 0 0 0 5px;
+
+    background: #40b9ae; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+    background:         linear-gradient(to top, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.plate > div .exp
+{
+    margin: 5px 0 5px !important;
+    padding: 0 0 0 30px;
+}
+
+.plate h2
+{
+    font-size: 18px;
+
+    margin: 30px 0 20px;
+
+    text-transform: uppercase;
+}
+
+.plate h3
+{
+    font-size: 15.2px;
+}
+
+.name > h2
+{
+    margin: 0;
+    padding: 0;
+}
+
+.name .major
+{
+    margin: 0;
+    padding: 5px 0;
+
+    color: #40b9ae;
+}
+
+.name > h2 span
+{
+    font-size: 11px;
+}
+
+.plate  h2 > .quote
+{
+    margin: 0 8px 0 10px;
+}
+
+.plate p
+{
+    font-size: 13px;
+    line-height: 20px;
+
+    margin: 15px 25px;
+}
+
+.plate > p span
+{
+    color: #40b9ae;
+}
+
+.plate h5
+{
+    margin: 5px 25px;
+}
+
+.plate > .skills h5
+{
+    color: #40b9ae;
+}
+
+.plate .career
+{
+    display: inline-block;
+}
+
+.plate .year
+{
+    margin: 0;
+
+    color: #40b9ae;
+}
+
+.cap
+{
+    position: relative;
+}
+
+.web
+{
+    position: absolute;
+    top: 100px;
+    left: 30px;
+}
+
+.uiux
+{
+    position: absolute;
+    top: 215px;
+    left: 220px;
+}
+
+.wd
+{
+    position: absolute;
+    top: 100px;
+    left: 150px;
+}
+
+.gd
+{
+    position: absolute;
+    top: 215px;
+    left: 100px;
+}
+
+.plate > div .cookie
+{
+    display: block;
+
+    width: 140px;
+    height: 140px;
+    margin: 0;
+    padding: 0;
+
+    background: #40b9ae; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, lightskyblue , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+    background:         linear-gradient(to top, lightskyblue , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    -webkit-clip-path: polygon(50% 5%, 90% 30%, 90% 70%, 50% 95%, 10% 70%, 10% 30%);
+}
+
+.plate > div .cookie h4
+{
+    font-size: 13px;
+
+    margin: 0;
+    padding: 65px 0;
+
+    text-align: center;
+
+    color: #fff;
+    text-shadow: 1px 1px rgba(0,0,0,.35);
+}
+
+.resume > .insterest
+{
+    margin: 0;
+    padding: 0;
+}
+
+.interest > ul
+{
+    display: inline;
+
+    margin: 0 20px;
+    padding: 0;
+}
+
+.interest > ul li
+{
+    display: inline;
+
+    padding: 0 5px 0 0;
+}
+
     </style>
 </head>
 <body>
-    <div class="About_Me">
-        <h1>About Page</h1>
-        <p> Am Nolubabalo Stokwe, a 26-year-old woman from the Eastern Cape locale of Engcobo. I have an Information Technology Diploma, and I'm now pursuing an Advanced Diploma in Application Development at Walter Sisulu University.</p>
-        <p>Resize the browser window to see that this page is responsive by the way.</p>
+  <div class="navbar">
+    <a href="home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a class="active" href= "#"><i class="fa fa-fw fa-user"></i> About</a>
+    <a href="Education.html"><i class="fa fa-graduation-cap"></i> Education</a>
+    <a href="Testimonial.html"><i class="fa fa-phone"></i> Testimonial</a>
+    <a href="Contact.html"><i class="fa fa-phone"></i> Contact</a>
+  </div>
+  <body>
+    <nav><img src="IMG1.jpg" width="500"></nav>
+  <section>
+    <h2><div class="quote"></div>Contact Me</h2>
+    <p><span>Mobile:</span>0780040273/0681943986</p>
+    <p><span>e-mail:</span>nolubabalostokwe@gmail.com</p>
+    <p><span>Facebook:</span>Mamthembu Stokwe</p>
+  </div>
+  <div class="plate">
+    <div class="about">
+      <h2><div class="quote"></div>About Me</h2>
+      <p>Name:    Nolubabalo<br>
+         Surname: Stokwe<br>
+         Age:     26<br>
+         Gender:  Female<br></p>
+      <p>I was born and raised in the province of the Eastern Cape in Engcobo.<br>
+      I am a devoted,passionate and hard working person, I have an Information Technology Diploma and<br>
+       am pursuing an Advanced Diploma in ICT in Application Development</p>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="skills">
+      <h2><div class="quote"></div>Skills</h2>
+      <h5>hTML & CSS</h5>
+      <div class="progressbar">
+        <div class="percent per70"></div>
       </div>
-      
-      <h2 style="text-align:center"></h2>
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <img src="IMG1.jpg" alt="Nolubabalo" style="width:100%">
-            <div class="container">
-              <h2>Nolubabalo Stokwe</h2>
-            </div>
-          </div>
-        </div>
-
-        
-</body>
-</html>
+      <h5>JAVA</h5>
+      <div class="progressbar">
+        <div class="percent per60"></div>
+      </div>
+      <h5>VB</h5>
+      <div class="progressbar">
+        <div class="percent per80"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <h2><div class="quote"></div>Experience</h2>
+    <div class="career">
+      <div class="timeline">
+        <div class="spot"></div>
+        <div class="line"></div>
+      </div>
+      <h3>Educator Assistant</h3>
+      <h5 class="year">2021</h5>
+      <p class="exp">I worked as an Educatior Assistant at Goboti Junior Secondary School
+      </p>
+    </div>
+  </section>
+  <aside>aside</aside>
+  <footer>footer</footer>
+    </div>
+    </div>
+    </body>  

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #04AA6D;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+* {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   outline: none;
+}
+
+body {
+   margin: 0;
+   padding: 30px 0;
+   font-family: 'Roboto', sans-serif;
+   background: lightskyblue;
+}
+
+h1 {
+   text-align: center;
+   font-weight: 300;
+   color: black
+}
+
+h1 span {
+   font-weight: 600;
+}
+
+.container {
+   width: 80%;
+   padding: 50px 0;
+   margin: 50px auto;
+   position: relative;
+   overflow: hidden;
+}
+
+.container:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50%;
+   margin-left: -1px;
+   width: 2px;
+   height: 100%;
+   background: lightblue;
+   z-index: 1
+}
+
+.timeline-block {
+   width: -webkit-calc(50% + 8px);
+   width: -moz-calc(50% + 8px);
+   width: calc(50% + 8px);
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -moz-box;
+   display: flex;
+   -webkit-box-pack: justify;
+   -webkit-justify-content: space-between;
+   -moz-box-pack: justify;
+   justify-content: space-between;
+   clear: both;
+}
+
+.timeline-block-right {
+   float: right;
+}
+
+.timeline-block-left {
+   float: left;
+   direction: rtl
+}
+
+.marker {
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   border: 2px solid purple;
+   background: darkblue;
+   margin-top: 10px;
+   z-index: 9999
+}
+
+.timeline-content {
+   width: 95%;
+   padding: 0 15px;
+   color: black
+}
+
+.timeline-content h3 {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   font-size: 25px;
+   font-weight: 500
+}
+
+.timeline-content span {
+   font-size: 18px;
+   color: black;
+}
+
+.timeline-content p {
+   font-size: 20px;
+   line-height: 1.5em;
+   word-spacing: 1px;
+   color: black;
+}
+
+
+@media screen and (max-width: 768px) {
+   .container:before {
+      left: 8px;
+      width: 2px;
+   }
+   .timeline-block {
+      width: 100%;
+      margin-bottom: 30px;
+   }
+   .timeline-block-right {
+      float: none;
+   }
+
+   .timeline-block-left {
+      float: none;
+      direction: ltr;
+   }
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="about.html"><i class="fa fa-fw fa-user"></i> About</a>
+        <a class="active" href= "#"><i class="fa fa-graduation-cap"></i> Education</a>
+        <a href="Testimonial.html"><i class="fa fa-testimonial"></i> Testimonial</a>
+        <a href="Contact.html"><i class="fa fa-phone"></i> Contact</a>
+      </div>
+      <h1>Education<span>timeline</span></h1>
+
+      <div class="container">
+      
+         <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+               <h3>2014-2015</h3>
+               <span>Phillip Mtywaku SSS</span>
+               <p>Grade11-Grade12</p>
+            </div>
+         </div>
+      
+         <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+               <h3>2016-2020</h3>
+               <span>Walter Sisulu University</span>
+               <p>Diploma in Information Technology</p>
+            </div>
+         </div>
+      
+         <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+               <h3>2021</h3>
+               <span>Goboti Jss</span>
+               <p>Working as an Educator Assistant(Curriculum)</p>
+            </div>
+         </div>
+      
+         <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+               <h3>2022</h3>
+               <span>Walter Sisulu University</span>
+               <p>Doing Advanced Diploma in ICT in Application Development</p>
+            </div>
+         </div>
+    
+</body>
+</html>
